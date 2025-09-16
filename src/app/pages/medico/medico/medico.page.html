@@ -1,0 +1,52 @@
+<div class="medico-layout">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo"></div>
+    <nav>
+      <ul>
+        <li routerLink="/medico/home" routerLinkActive="active">
+          <ion-icon name="home-outline"></ion-icon>
+          Inicio
+        </li>
+        <li routerLink="/medico/crear-receta" routerLinkActive="active">
+          <ion-icon name="add-circle-outline"></ion-icon>
+          Crear
+        </li>
+        <li routerLink="/medico/listado-recetas" routerLinkActive="active">
+          <ion-icon name="person-outline"></ion-icon>
+          Pacientes
+        </li>
+        <li routerLink="/medico/ajustes" routerLinkActive="active">
+          <ion-icon name="settings-outline"></ion-icon>
+          Ajustes
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Botón cerrar sesión -->
+    <ion-button fill="clear" class="logout-button" (click)="cerrarSesion()">
+      <ion-icon name="log-out-outline" size="small"></ion-icon>
+    </ion-button>
+  </aside>
+
+  <!-- Contenido principal -->
+  <main class="contenido">
+    <router-outlet></router-outlet>
+  </main>
+</div>
+
+<!-- Footer -->
+<footer class="footer-medico">
+  <div class="footer-left">
+    <ion-icon name="apps-outline" size="large"></ion-icon>
+  </div>
+  <div class="footer-center">
+    <strong>InnovaPharm</strong>
+    <p>Lorem impsun</p>
+  </div>
+  <div class="footer-right">
+    <strong>Contactate con nosotros</strong>
+    <p>innovapharm&#64;gmail.com</p>
+    <p>+56 9 1234 5678</p>
+  </div>
+</footer>

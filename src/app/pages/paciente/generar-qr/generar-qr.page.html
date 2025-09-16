@@ -1,0 +1,16 @@
+<ion-content class="fondo-claro">
+  <div class="encabezado-curvo">
+    <h1 class="titulo">InnovaPharm</h1>
+  </div>
+
+  <div class="contenido-centro">
+    <p class="subtitulo">Muestra este codigo QR<br>al farmacéutico</p>
+
+    <div class="qr-centro">
+      <qrcode [qrdata]="recetaId" [width]="220" [errorCorrectionLevel]="'M'"></qrcode>
+    </div>
+
+    <ion-button expand="block" class="boton-volver" (click)="volver()">Volver</ion-button>
+  </div>
+
+</ion-content>

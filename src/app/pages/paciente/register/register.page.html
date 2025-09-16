@@ -1,0 +1,66 @@
+<ion-content class="paciente-curva-header" fullscreen>
+  <div class="header-container">
+    <h1 class="titulo">InnovaPharm</h1>
+    <div class="curva-blanca">
+      <div class="icono-usuario">
+        <ion-icon name="person-circle-outline"></ion-icon>
+      </div>
+    </div>
+  </div>
+
+  <form class="formulario-registro" (submit)="registrar($event)">
+    <ion-item lines="none">
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input [(ngModel)]="paciente.nombre" name="nombre" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label position="floating">Apellido Paterno</ion-label>
+      <ion-input [(ngModel)]="paciente.apellidoPaterno" name="apellidoPaterno" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label position="floating">Apellido Materno</ion-label>
+      <ion-input [(ngModel)]="paciente.apellidoMaterno" name="apellidoMaterno"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label position="floating">Correo</ion-label>
+      <ion-input [(ngModel)]="paciente.correo" type="email" name="correo" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input [(ngModel)]="paciente.contrasena" name="contrasena" [type]="mostrarContrasena ? 'text' : 'password'" required></ion-input>
+      <ion-icon
+        slot="end"
+        [name]="mostrarContrasena ? 'eye-off' : 'eye'"
+        (click)="mostrarContrasena = !mostrarContrasena"
+        class="icono-ojo">
+      </ion-icon>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label position="floating">Repetir Contraseña</ion-label>
+      <ion-input [(ngModel)]="contrasenaConfirmacion" name="contrasenaConfirmacion" [type]="mostrarContrasenaConfirmacion ? 'text' : 'password'" required></ion-input>
+      <ion-icon
+        slot="end"
+        [name]="mostrarContrasenaConfirmacion ? 'eye-off' : 'eye'"
+        (click)="mostrarContrasenaConfirmacion = !mostrarContrasenaConfirmacion"
+        class="icono-ojo">
+      </ion-icon>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label position="floating">RUT</ion-label>
+      <ion-input [(ngModel)]="paciente.rut" name="rut" (ionInput)="validarYFormatearRut($event)" maxlength="12" required></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" class="boton-registro" type="submit">Registrarse</ion-button>
+
+    <div class="acciones-texto">
+      <p>¿Ya tienes una cuenta?</p>
+      <a routerLink="/login">Inicia sesión</a>
+    </div>
+  </form>
+</ion-content>

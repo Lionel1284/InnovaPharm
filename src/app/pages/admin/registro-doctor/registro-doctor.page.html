@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Registrar Doctor</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form (submit)="registrar($event)">
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input [(ngModel)]="medico.nombre" name="nombre" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Apellido Paterno</ion-label>
+      <ion-input [(ngModel)]="medico.apellidoPaterno" name="apellidoPaterno" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Apellido Materno</ion-label>
+      <ion-input [(ngModel)]="medico.apellidoMaterno" name="apellidoMaterno"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Correo</ion-label>
+      <ion-input [(ngModel)]="medico.correo" type="email" name="correo" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input [(ngModel)]="medico.contrasena" type="password" name="contrasena" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">RUT</ion-label>
+      <ion-input
+        [(ngModel)]="medico.rut"
+        name="rut"
+        maxlength="12"
+        (ionInput)="validarYFormatearRut($event)"
+        required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Especialidad</ion-label>
+      <ion-input [(ngModel)]="medico.especialidad" name="especialidad" required></ion-input>
+    </ion-item>
+
+    <!-- Subir Firma -->
+    <ion-item>
+      <ion-label>Firma (imagen)</ion-label>
+      <input type="file" accept="image/*" (change)="procesarFirma($event)">
+    </ion-item>
+
+    <!-- Vista previa de la firma -->
+    <div *ngIf="firmaPreview" class="ion-text-center ion-margin-top">
+      <p><strong>Vista previa de la firma:</strong></p>
+      <img [src]="firmaPreview" alt="Firma" style="max-width: 200px;">
+    </div>
+
+    <ion-button expand="block" type="submit">Registrar Doctor</ion-button>
+  </form>
+</ion-content>

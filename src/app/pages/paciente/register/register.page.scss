@@ -1,0 +1,90 @@
+.paciente-curva-header {
+  .formulario-registro {
+    padding: 32px 16px 60px;
+    max-width: 420px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  ion-item {
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    --inner-padding-start: 12px;
+    --padding-start: 0;
+    --padding-end: 0;
+    --background: #ffffff;
+    height: 50px;
+  }
+
+  ion-input::part(native) {
+    text-align: left;
+  }
+.icono-usuario {
+  margin-bottom: -12px; // antes estaba pegado, ahora baja visualmente
+  display: flex;
+  justify-content: center;
+}
+
+.icono-usuario ion-icon {
+  font-size: 120px;
+  color: #3a3a3a;
+}
+
+.formulario-registro {
+  padding-top: 8px; // era 32px, ahora más compacto
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 60px;
+  max-width: 420px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+  .boton-registro {
+  width: 100%;
+  border-radius: 12px;
+  background-color: #3b6cff; // Azul más fuerte y coherente con el link
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 16px;
+  height: 48px;
+  margin-top: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.boton-registro:hover {
+  background-color: #2a54d8; // Efecto hover más oscuro
+}
+
+  .acciones-texto {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 16px;
+  }
+
+  .acciones-texto a {
+    color: #3b6cff;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .icono-ojo {
+    font-size: 24px;
+    color: #666;
+    cursor: pointer;
+  }
+  .titulo {
+    font-family: 'Georgia', serif;
+    font-size: 32px;
+    font-weight: bold;
+    color: #000000;
+    z-index: 2;
+    position: relative;
+    margin-bottom: 24px;
+  }
+}

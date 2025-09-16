@@ -1,0 +1,132 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Gestión de Usuarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <!-- Médicos -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Doctores</ion-card-title>
+    </ion-card-header>
+
+    <ion-searchbar
+      [(ngModel)]="busquedaMedico"
+      (ionInput)="filtrarMedicos()"
+      placeholder="Buscar por nombre, apellido o RUT">
+    </ion-searchbar>
+
+    <ion-list>
+      <ion-item *ngFor="let m of medicosFiltrados">
+        <ion-label>
+          <h2>{{ m.nombre }} {{ m.apellidoPaterno }}</h2>
+          <p>Especialidad: {{ m.especialidad }}</p>
+        </ion-label>
+        <ion-button fill="clear" color="primary" slot="end" (click)="editarMedico(m)">
+          <ion-icon name="create-outline"></ion-icon>
+        </ion-button>
+        <ion-button fill="clear" color="danger" slot="end" (click)="eliminar('medico', m.id!)">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-list>
+
+    <ion-grid class="ion-padding-start">
+      <ion-row>
+        <ion-col size="auto" *ngFor="let i of getRangoPaginas(totalPaginasMedicos)">
+          <ion-button
+            [fill]="i === paginaActualMedicos ? 'solid' : 'outline'"
+            (click)="cargarPaginaMedicos(i)">
+            {{ i }}
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+  <!-- Farmacéuticos -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Farmacéuticos</ion-card-title>
+    </ion-card-header>
+
+    <ion-searchbar
+      [(ngModel)]="busquedaFarmaceutico"
+      (ionInput)="filtrarFarmaceuticos()"
+      placeholder="Buscar por nombre, apellido o RUT">
+    </ion-searchbar>
+
+    <ion-list>
+      <ion-item *ngFor="let f of farmaceuticosFiltrados">
+        <ion-label>
+          <h2>{{ f.nombre }} {{ f.apellidoPaterno }}</h2>
+          <p>RUT: {{ f.rut }}</p>
+        </ion-label>
+        <ion-button fill="clear" color="primary" slot="end" (click)="editarFarmaceutico(f)">
+          <ion-icon name="create-outline"></ion-icon>
+        </ion-button>
+        <ion-button fill="clear" color="danger" slot="end" (click)="eliminar('farmaceutico', f.id!)">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-list>
+
+    <ion-grid class="ion-padding-start">
+      <ion-row>
+        <ion-col size="auto" *ngFor="let i of getRangoPaginas(totalPaginasFarmaceuticos)">
+          <ion-button
+            [fill]="i === paginaActualFarmaceuticos ? 'solid' : 'outline'"
+            (click)="cargarPaginaFarmaceuticos(i)">
+            {{ i }}
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+  <!-- Pacientes -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Pacientes</ion-card-title>
+    </ion-card-header>
+
+    <ion-searchbar
+      [(ngModel)]="busquedaPaciente"
+      (ionInput)="filtrarPacientes()"
+      placeholder="Buscar por nombre, apellido o RUT">
+    </ion-searchbar>
+
+    <ion-list>
+      <ion-item *ngFor="let p of pacientesFiltrados">
+        <ion-label>
+          <h2>{{ p.nombre }} {{ p.apellidoPaterno }}</h2>
+          <p>RUT: {{ p.rut }}</p>
+        </ion-label>
+        <ion-button fill="clear" color="primary" slot="end" (click)="editarPaciente(p)">
+          <ion-icon name="create-outline"></ion-icon>
+        </ion-button>
+        <ion-button fill="clear" color="danger" slot="end" (click)="eliminar('paciente', p.id!)">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-list>
+
+    <ion-grid class="ion-padding-start">
+      <ion-row>
+        <ion-col size="auto" *ngFor="let i of getRangoPaginas(totalPaginasPacientes)">
+          <ion-button
+            [fill]="i === paginaActualPacientes ? 'solid' : 'outline'"
+            (click)="cargarPaginaPacientes(i)">
+            {{ i }}
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+</ion-content>

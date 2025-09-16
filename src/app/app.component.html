@@ -1,3 +1,77 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <!-- Menú lateral izquierdo -->
+  <ion-menu contentId="main-content" type="overlay" autoHide="true">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Consultorio</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+
+        <!-- Si NO hay sesión -->
+        <ng-container *ngIf="!logueado">
+          <ion-item button (click)="navegar('/login')">
+            <ion-label>Iniciar Sesión</ion-label>
+          </ion-item>
+          <ion-item button (click)="navegar('/register')">
+            <ion-label>Registrarse</ion-label>
+          </ion-item>
+        </ng-container>
+
+        <!-- Si hay sesión -->
+        <ng-container *ngIf="logueado && usuario">
+          <!-- Panel Administrador -->
+          <ion-item *ngIf="usuario.rol === 'admin'" button (click)="navegar('/admin/home')">
+            <ion-label>Panel Administrador</ion-label>
+          </ion-item>
+
+          <!-- Registrar Doctor -->
+          <ion-item *ngIf="usuario.rol === 'admin'" button (click)="navegar('/admin/registro-doctor')">
+            <ion-label>Registrar Doctor</ion-label>
+          </ion-item>
+
+          <!-- Registrar Farmacéutico -->
+          <ion-item *ngIf="usuario.rol === 'admin'" button (click)="navegar('/admin/registro-farmaceutico')">
+            <ion-label>Registrar Farmacéutico</ion-label>
+          </ion-item>
+
+          <!-- Gestionar Usuarios -->
+          <ion-item *ngIf="usuario.rol === 'admin'" button (click)="navegar('/admin/usuarios')">
+            <ion-label>Gestionar Usuarios</ion-label>
+          </ion-item>
+
+          <!-- Paciente -->
+          <ion-item *ngIf="usuario.rol === 'paciente'" button (click)="navegar('/paciente/perfil')">
+            <ion-label>Mi Perfil</ion-label>
+          </ion-item>
+          
+          <ion-item *ngIf="usuario.rol === 'paciente'" button (click)="navegar('/paciente/recetas')">
+            <ion-label>Mis Recetas</ion-label>
+          </ion-item>
+
+          <!-- Médico -->
+          <ion-item *ngIf="usuario.rol === 'medico'" button (click)="navegar('/doctor/home')">
+            <ion-label>Inicio Médico</ion-label>
+          </ion-item>
+
+          <!-- Farmacéutico -->
+          <ion-item *ngIf="usuario.rol === 'farmaceutico'" button (click)="navegar('/farmaceutico/escaneo')">
+            <ion-label>Escaneo</ion-label>
+          </ion-item>
+
+          <!-- Cerrar sesión -->
+          <ion-item button (click)="cerrarSesion()">
+            <ion-label>Cerrar Sesión</ion-label>
+          </ion-item>
+        </ng-container>
+
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <!-- Contenido principal -->
+  <div class="ion-page" id="main-content">
+    <ion-router-outlet></ion-router-outlet>
+  </div>
 </ion-app>

@@ -1,0 +1,138 @@
+.receta-detalle-container {
+  background-color: #f0f0f0;
+
+  .receta-box {
+    background: #fff;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+  }
+
+  .header {
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 16px;
+    text-align: center;
+
+
+    .linea-tricolor {
+      display: flex;
+      height: 6px;
+      margin-bottom: 10px;
+
+      .linea {
+        flex: 1;
+      }
+
+      .azul {
+        background-color: #003366;
+        border-top-left-radius: 4px;
+      }
+
+      .roja {
+        background-color: #cc0000;
+        border-top-right-radius: 4px;
+      }
+    }
+
+
+    .titulo-encabezado {
+      color: #004a99;
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    .fecha {
+      font-size: 13px;
+      color: #444;
+    }
+  }
+
+  .info-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+
+    div {
+      flex: 1;
+    }
+
+    p {
+      margin: 4px 0;
+    }
+  }
+
+  .prescripcion-section {
+    margin-bottom: 20px;
+
+    h3 {
+      color: #003366;
+      margin-bottom: 8px;
+    }
+
+    .medicamento-item {
+      background-color: #eef3f8;
+      padding: 8px 12px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .firma-section {
+    text-align: center;
+    margin: 20px 0;
+
+    .especialidad-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      margin-top: 4px;
+
+      .icono-especialidad {
+        color: #0070ba;
+        font-size: 16px;
+      }
+
+      .especialidad-texto {
+        font-size: 14px;
+        color: #333;
+        font-style: italic;
+      }
+    }
+    .linea-firma {
+      border-bottom: 1px solid #000;
+      width: 200px;
+      margin: 0 auto 8px;
+    }
+
+    .firma-texto {
+      font-family: 'Dancing Script', cursive;
+      font-size: 26px;
+      color: #000;
+      margin-bottom: 4px;
+    }
+
+    .nombre-medico {
+      font-weight: bold;
+      margin-bottom: 2px;
+    }
+
+    .especialidad {
+      font-size: 13px;
+      color: #666;
+    }
+  }
+
+  .botones {
+    margin-top: 20px;
+
+    .boton {
+      margin: 10px 0;
+      border-radius: 12px;
+      font-weight: bold;
+      --background: #4f9dfc;
+    }
+  }
+}

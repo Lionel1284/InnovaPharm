@@ -1,0 +1,142 @@
+<ion-content class="ion-padding">
+  <!-- Sección de validación de RUT -->
+  <div class="seccion-validacion">
+    <div class="header-seccion">
+      <ion-icon name="person-circle-outline" class="icono-seccion"></ion-icon>
+      <h2 class="titulo-seccion">Validación del Paciente</h2>
+    </div>
+
+    <div class="campo-rut">
+      <ion-item lines="none" class="item-rut">
+        <ion-icon slot="start" name="person-outline"></ion-icon>
+        <ion-input
+          [(ngModel)]="rutPaciente"
+          name="rutPaciente"
+          placeholder="Ingrese RUN del paciente"
+          type="text"
+          maxlength="12"
+          (ionInput)="validarYFormatearRutPaciente($event)"
+          required>
+        </ion-input>
+      </ion-item>
+      <ion-button expand="block" class="boton-validar" (click)="validarRutPaciente()">
+        <ion-icon slot="start" name="checkmark-circle-outline"></ion-icon>
+        Validar Paciente
+      </ion-button>
+    </div>
+  </div>
+
+  <!-- Formulario principal de receta -->
+  <div class="formulario-receta">
+    <!-- Información del paciente -->
+    <div class="seccion-paciente">
+      <div class="header-seccion">
+        <ion-icon name="medical-outline" class="icono-seccion"></ion-icon>
+        <h3 class="titulo-seccion">Información del Paciente</h3>
+      </div>
+
+      <ion-item lines="none" class="campo-readonly">
+        <ion-icon slot="start" name="person"></ion-icon>
+        <ion-input
+          label="Nombre del Paciente"
+          [value]="nombrePaciente"
+          readonly
+          class="input-readonly">
+        </ion-input>
+      </ion-item>
+    </div>
+
+    <!-- Descripción de la receta -->
+    <div class="seccion-descripcion">
+      <div class="header-seccion">
+        <ion-icon name="document-text-outline" class="icono-seccion"></ion-icon>
+        <h3 class="titulo-seccion">Descripción de la Receta</h3>
+      </div>
+
+      <ion-item lines="none">
+        <ion-textarea
+          label="Descripción"
+          [(ngModel)]="descripcion"
+          placeholder="Ingrese descripción de la receta médica"
+          rows="3">
+        </ion-textarea>
+      </ion-item>
+    </div>
+
+    <!-- Sección de medicamentos -->
+    <div class="seccion-medicamentos">
+      <div class="header-medicamentos">
+        <div class="header-seccion">
+          <ion-icon name="medical-outline" class="icono-seccion"></ion-icon>
+          <h3 class="titulo-seccion">Medicamentos Prescritos</h3>
+        </div>
+        <ion-button fill="outline" size="small" (click)="agregarMedicamento()">
+          <ion-icon slot="start" name="add-circle-outline"></ion-icon>
+          Agregar
+        </ion-button>
+      </div>
+
+      <div class="lista-medicamentos">
+        <div *ngFor="let med of medicamentos; let i = index" class="tarjeta-medicamento">
+          <div class="header-medicamento">
+            <span class="numero-medicamento">Medicamento {{i + 1}}</span>
+            <ion-button
+              fill="clear"
+              color="danger"
+              size="small"
+              (click)="eliminarMedicamento(i)">
+              <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+            </ion-button>
+          </div>
+
+          <div class="campos-medicamento">
+            <ion-item lines="none">
+              <ion-icon slot="start" name="medical"></ion-icon>
+              <ion-input
+                label="Nombre del Medicamento"
+                [(ngModel)]="med.nombre"
+                placeholder="Ej: Paracetamol 500mg">
+              </ion-input>
+            </ion-item>
+
+            <ion-item lines="none">
+              <ion-icon slot="start" name="list-outline"></ion-icon>
+              <ion-textarea
+                label="Instrucciones de Uso"
+                [(ngModel)]="med.instrucciones"
+                placeholder="Ej: Tomar 1 comprimido cada 8 horas por 5 días"
+                rows="2">
+              </ion-textarea>
+            </ion-item>
+          </div>
+        </div>
+
+        <div *ngIf="medicamentos.length === 0" class="mensaje-vacio">
+          <ion-icon name="medical-outline" class="icono-vacio"></ion-icon>
+          <p>No hay medicamentos agregados</p>
+          <small>Presiona "Agregar" para añadir medicamentos</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Botones de acción -->
+    <div class="seccion-acciones">
+      <ion-button
+        expand="block"
+        fill="outline"
+        color="medium"
+        (click)="limpiarFormulario()">
+        <ion-icon slot="start" name="refresh-outline"></ion-icon>
+        Limpiar Campos
+      </ion-button>
+
+      <ion-button
+        expand="block"
+        color="primary"
+        (click)="crearReceta()">
+        <ion-icon slot="start" name="document-outline"></ion-icon>
+        Crear Receta
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

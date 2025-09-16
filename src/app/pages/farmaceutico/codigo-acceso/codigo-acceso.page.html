@@ -1,0 +1,19 @@
+<ion-content class="ion-padding">
+  <div class="codigo-wrapper">
+    <h2>Ingrese código numérico</h2>
+
+    <div class="codigo-inputs">
+      <input
+        *ngFor="let digito of [0,1,2,3]; let i = index"
+        type="text"
+        maxlength="1"
+        [attr.data-index]="i"
+        (input)="manejarInput($event)"
+        (keydown)="manejarTecla($event)"
+        class="cuadro-codigo"
+      />
+    </div>
+
+    <ion-button expand="block" (click)="validarCodigo()">Confirmar</ion-button>
+  </div>
+</ion-content>

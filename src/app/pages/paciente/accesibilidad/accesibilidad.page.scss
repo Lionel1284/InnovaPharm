@@ -1,0 +1,129 @@
+/* ACCESIBILIDAD PAGE */
+.accesibilidad-curva-header {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  .header-container {
+    background-color: #d6e4ff;
+    text-align: center;
+    padding-top: 48px;
+    padding-bottom: 40px;
+    position: relative;
+    z-index: 1;
+    transition: background-color 0.3s ease;
+
+    .titulo {
+      font-size: 30px;
+      font-weight: bold;
+      font-family: 'Georgia', serif;
+      color: #000;
+      transition: color 0.3s ease;
+    }
+
+    .back-button {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      color: #000;
+      transition: color 0.3s ease;
+    }
+  }
+
+  .curva-blanca {
+    background-color: #ffffff;
+    width: 100%;
+    height: 80px;
+    border-top-left-radius: 100% 80px;
+    border-top-right-radius: 100% 80px;
+    margin-top: -10px;
+    z-index: 0;
+    transition: background-color 0.3s ease;
+  }
+}
+
+/* Estilos de opciones */
+.opciones-ajustes {
+  padding: 0 20px;
+  margin-top: -30px;
+  transition: all 0.3s ease;
+
+  ion-item {
+    background: #eef3ff;
+    border-radius: 16px;
+    margin-bottom: 12px;
+    --background: transparent;
+    --padding-start: 12px;
+    --inner-padding-end: 12px;
+    --min-height: 56px;
+    transition: background 0.3s ease;
+  }
+
+  ion-icon {
+    font-size: 24px;
+    color: #3a3a3a;
+    transition: color 0.3s ease;
+  }
+
+  ion-label {
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  :root {
+    --accesibilidad-font-size: 16px;
+  }
+
+  .opciones-ajustes ion-label {
+    font-size: var(--accesibilidad-font-size);
+  }
+}
+
+/* MODO OSCURO */
+body.dark-mode {
+  --background-dark: #121212;
+  --surface-dark: #1e1e1e;
+  --primary-dark: #bb86fc;
+  --secondary-dark: #03dac6;
+  --text-dark: #e0e0e0;
+  --text-secondary-dark: #a0a0a0;
+  --card-dark: #252525;
+
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+
+  .accesibilidad-curva-header {
+    .header-container {
+      background-color: #0d47a1;
+
+      .titulo, .back-button {
+        color: #fff;
+      }
+    }
+
+    .curva-blanca {
+      background-color: var(--surface-dark);
+    }
+  }
+
+  .opciones-ajustes {
+    ion-item {
+      background: var(--card-dark);
+
+      ion-icon {
+        color: var(--primary-dark);
+      }
+
+      ion-label {
+        color: var(--text-dark);
+      }
+    }
+
+    ion-label, .texto, p, h1, h2, h3, h4, h5, h6 {
+  font-size: var(--accesibilidad-font-size);
+}
+
+  }
+}

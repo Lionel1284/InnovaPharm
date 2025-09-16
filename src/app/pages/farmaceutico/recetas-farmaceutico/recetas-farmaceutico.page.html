@@ -1,0 +1,34 @@
+<ion-content class="ion-padding">
+  <div class="contenido-centrado">
+    <h2 class="titulo">Recetas del Paciente</h2>
+
+    <ion-searchbar
+      [(ngModel)]="busqueda"
+      (ionInput)="filtrarRecetas()"
+      placeholder="Buscar por descripción, medicamento o fecha"
+      class="buscador">
+    </ion-searchbar>
+
+    <div *ngIf="!cargando && recetasFiltradas.length === 0" class="mensaje-vacio">
+      <p><strong>No se encontraron recetas que coincidan.</strong></p>
+    </div>
+
+    <ion-list *ngIf="!cargando">
+      <ion-item *ngFor="let receta of recetasFiltradas" class="card-receta" (click)="irAControlReceta(receta.id!)">
+        <ion-avatar slot="start" class="avatar-icono">
+          <ion-label class="letra-avatar">R</ion-label>
+        </ion-avatar>
+
+        <ion-label>
+          <h3>{{ receta.medicoNombre }}</h3>
+          <p>{{ receta.descripcion }}</p>
+          <small>{{ receta.fecha | date:'dd/MM/yyyy' }}</small>
+        </ion-label>
+
+        <ion-button fill="clear" slot="end">
+          <ion-icon name="eye-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

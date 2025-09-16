@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">consultorio-app</string>
+    <string name="title_activity_main">consultorio-app</string>
+    <string name="package_name">com.consultorio.raul</string>
+    <string name="custom_url_scheme">com.consultorio.raul</string>
+</resources>

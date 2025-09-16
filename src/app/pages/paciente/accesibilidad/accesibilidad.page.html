@@ -1,0 +1,30 @@
+<ion-content class="paciente" [fullscreen]="true">
+  <!-- Bloque de cabecera curva -->
+  <div class="accesibilidad-curva-header">
+    <div class="header-container">
+      <ion-button fill="clear" class="back-button" routerLink="/paciente/ajustes">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+      <div class="titulo">InnovaPharm</div>
+    </div>
+    <div class="curva-blanca"></div>
+  </div>
+
+  <!-- Contenido de opciones -->
+  <div class="opciones-ajustes">
+    <ion-item lines="none">
+      <ion-label>Modo oscuro</ion-label>
+      <ion-toggle slot="end" [checked]="darkMode" (ionChange)="toggleDarkMode($event)"></ion-toggle>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label>Tamaño de letras</ion-label>
+      <ion-button fill="clear" slot="end" (click)="aumentarLetra()">
+        <ion-icon name="text-outline"></ion-icon>
+      </ion-button>
+          <ion-button fill="clear" slot="end" (click)="disminuirLetra()">
+        <ion-icon name="remove-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </div>
+</ion-content>

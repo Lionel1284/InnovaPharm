@@ -1,0 +1,20 @@
+<ion-content class="ion-padding">
+  <div class="contenido-centrado">
+    <h2 class="titulo">Ingrese RUT</h2>
+
+    <ion-item lines="none">
+      <ion-icon slot="start" name="person-outline"></ion-icon>
+      <ion-input
+        [(ngModel)]="rut"
+        name="rut"
+        placeholder="RUN"
+        type="text"
+        maxlength="12"
+        (ionInput)="validarYFormatearRut($event)"
+        required>
+      </ion-input>
+    </ion-item>
+
+    <ion-button expand="block" (click)="validarRut()">Confirmar</ion-button>
+  </div>
+</ion-content>

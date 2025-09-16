@@ -1,0 +1,71 @@
+<ion-content [fullscreen]="true" class="notificaciones-page">
+  <!-- Encabezado con curva -->
+  <div class="curva-header">
+    <ion-button fill="clear" class="back-button" routerLink="/paciente/ajustes">
+      <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+    </ion-button>
+    <div class="titulo">InnovaPharm</div>
+    <div class="curva-blanca"></div>
+  </div>
+
+  <!-- Contenido principal -->
+  <div class="contenedor-ajustes">
+    <!-- Toggle Activar Notificaciones -->
+    <div class="item-toggle-container">
+      <ion-item lines="none" class="item-toggle">
+        <ion-label>Activar Notificaciones</ion-label>
+        <ion-toggle slot="end" [(ngModel)]="notificacionesActivas"></ion-toggle>
+      </ion-item>
+    </div>
+
+    <!-- Bloque Modo Descanso -->
+    <div class="bloque-descanso">
+      <!-- Toggle Modo Descanso -->
+      <div class="item-toggle-container-interno">
+        <ion-item lines="none" class="item-toggle-interno">
+          <ion-label>Modo Descanso</ion-label>
+          <ion-toggle slot="end" [(ngModel)]="modoDescanso"></ion-toggle>
+        </ion-item>
+      </div>
+
+      <p class="descripcion">Tus notificaciones se silenciarán durante las horas que elijas.</p>
+
+      <!-- Horas con cajas como en el mockup -->
+      <div class="horas-container">
+        <div class="hora-item">
+          <ion-label class="hora-label">Hora de inicio</ion-label>
+          <div class="hora-input-box">
+            <span class="hora-valor">{{ horaInicio || '23:00' }}</span>
+          </div>
+        </div>
+
+        <div class="hora-item">
+          <ion-label class="hora-label">Hora de finalización</ion-label>
+          <div class="hora-input-box">
+            <span class="hora-valor">{{ horaFin || '7:00' }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Días de la semana -->
+      <div class="dias-semana">
+        <ion-label class="dias-label">Elegir días</ion-label>
+        <div class="dias-container">
+          <button
+            *ngFor="let dia of dias"
+            class="dia-boton"
+            [class.activo]="dia.activo"
+            (click)="toggleDia(dia)">
+            {{ dia.letra }}
+          </button>
+        </div>
+        <p class="info-dias">El modo descanso está activado todos los días.</p>
+      </div>
+
+      <!-- Botón Guardar -->
+      <ion-button expand="block" class="btn-guardar">
+        GUARDAR
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

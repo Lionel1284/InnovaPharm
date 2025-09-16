@@ -1,2 +1,31 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+.paciente-curva-header {
+  --background: #ffffff;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+
+  .header-container {
+    background-color: #d6e4ff;
+    position: relative;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 0;
+  }
+
+  .curva-blanca {
+    background-color: #ffffff;
+    width: 100%;
+    height: 160px;
+    border-top-left-radius: 100% 80px;
+    border-top-right-radius: 100% 80px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 12px;
+  }
+
+}

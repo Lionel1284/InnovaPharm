@@ -1,0 +1,47 @@
+/* HOME PAGE */
+.paciente-curva-header {
+  transition: all 0.3s ease;
+
+  .icono-usuario {
+    margin-bottom: -12px;
+    display: flex;
+    justify-content: center;
+
+    ion-icon {
+      font-size: 120px;
+      color: #3a3a3a;
+      transition: color 0.3s ease;
+    }
+  }
+
+  .contenido-home {
+    text-align: center;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+  }
+
+  .bienvenida {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    transition: color 0.3s ease;
+  }
+
+  .nombre {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    transition: color 0.3s ease;
+  }
+}
+
+
+.titulo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #000;
+      transition: color 0.3s ease;
+    }
+
+
+

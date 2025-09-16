@@ -1,0 +1,73 @@
+.terminos-page {
+  --background: #ffffff;
+
+  .paciente-curva-header {
+    position: relative;
+    background-color: #d4e0ff;
+    height: 160px;
+    border-bottom-left-radius: 100% 30%;
+    border-bottom-right-radius: 100% 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header-container {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .icono-back {
+    position: absolute;
+    left: 20px;
+    top: 5px;
+    font-size: 24px;
+    color: #000;
+  }
+
+  .titulo {
+    font-size: 32px;
+    font-weight: bold;
+    color: #000;
+    font-family: serif;
+  }
+
+  .curva-blanca {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20px;
+    background-color: #ffffff;
+    border-top-left-radius: 100% 100%;
+    border-top-right-radius: 100% 100%;
+  }
+
+  .contenido-centro {
+    text-align: center;
+    padding: 30px 20px 20px 20px;
+  }
+
+  .icono-documento {
+    font-size: 80px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #000;
+  }
+
+  .subtitulo {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+
+  .texto {
+    font-size: 14px;
+    margin-bottom: 16px;
+    text-align: justify;
+    line-height: 1.5;
+  }
+}

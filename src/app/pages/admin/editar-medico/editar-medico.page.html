@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/admin/usuarios"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Editar Médico</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+
+    <ion-item>
+      <ion-label position="stacked">Nombre</ion-label>
+      <ion-input [(ngModel)]="medico.nombre" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Apellido Paterno</ion-label>
+      <ion-input [(ngModel)]="medico.apellidoPaterno" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Apellido Materno</ion-label>
+      <ion-input [(ngModel)]="medico.apellidoMaterno"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">RUT</ion-label>
+      <ion-input [(ngModel)]="medico.rut" disabled></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Correo</ion-label>
+      <ion-input [(ngModel)]="medico.correo" type="email" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Contraseña</ion-label>
+      <ion-input [(ngModel)]="medico.contrasena" type="password" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Especialidad</ion-label>
+      <ion-input [(ngModel)]="medico.especialidad" required></ion-input>
+    </ion-item>
+
+    <!-- Subir nueva firma -->
+    <ion-item>
+      <ion-label position="stacked">Actualizar Firma</ion-label>
+      <input type="file" accept="image/*" (change)="procesarFirma($event)">
+    </ion-item>
+
+    <!-- Vista previa de la firma actual o nueva -->
+    <div *ngIf="firmaPreview" class="ion-text-center ion-margin-top">
+      <p><strong>Firma actual:</strong></p>
+      <img [src]="firmaPreview" alt="Firma del médico" style="max-width: 200px;">
+    </div>
+
+  </ion-list>
+
+  <ion-button expand="block" color="primary" (click)="guardarCambios()">
+    Guardar Cambios
+  </ion-button>
+</ion-content>

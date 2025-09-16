@@ -1,0 +1,19 @@
+<ion-content class="fondo-claro">
+  <div class="encabezado-curvo">
+    <h1 class="titulo">InnovaPharm</h1>
+  </div>
+
+  <div class="contenido-centro">
+    <p class="subtitulo">Dicta este codigo al<br>farmacéutico</p>
+
+    <div class="codigo-grande">
+      <span class="corchete">[</span>
+      <span *ngFor="let d of codigo" class="digito">{{ d }}</span>
+      <span class="corchete">]</span>
+    </div>
+
+    <ion-button expand="block" class="boton-volver" (click)="volver()">
+      Volver
+    </ion-button>
+  </div>
+</ion-content>

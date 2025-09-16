@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "541276085691",
+    "project_id": "consultorio-raul",
+    "storage_bucket": "consultorio-raul.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:541276085691:android:7d7759854060214697f89e",
+        "android_client_info": {
+          "package_name": "com.consultorio.raul"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzZp5VSCop1D_WXg43cDZw53NGrPlFwAM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

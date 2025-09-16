@@ -1,0 +1,106 @@
+/* GENERAR QR PAGE */
+.fondo-claro {
+  --background: #ffffff;
+  transition: background 0.3s ease;
+}
+
+.encabezado-curvo {
+  background-color: #cfe2ff;
+  border-bottom-left-radius: 50% 20%;
+  border-bottom-right-radius: 50% 20%;
+  padding: 40px 20px 60px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.titulo {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 600;
+  color: #2d2d2d;
+  font-family: serif;
+  transition: color 0.3s ease;
+}
+
+.contenido-centro {
+  text-align: center;
+  margin-top: 30px;
+  padding: 0 20px;
+  transition: all 0.3s ease;
+}
+
+.subtitulo {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.qr-centro {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.boton-volver {
+  --background: #5ca8ff;
+  --color: #ffffff;
+  font-weight: 500;
+  border-radius: 20px;
+  width: 70%;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+}
+
+.tab-bar {
+  --background: #cfe2ff;
+  --color-selected: #000000;
+  --color: #333;
+  transition: all 0.3s ease;
+}
+
+ion-tab-bar {
+  border-top: none;
+}
+
+ion-tab-button {
+  font-size: 12px;
+}
+
+/* MODO OSCURO */
+body.dark-mode {
+  --background-dark: #121212;
+  --surface-dark: #1e1e1e;
+  --primary-dark: #bb86fc;
+  --secondary-dark: #03dac6;
+  --text-dark: #e0e0e0;
+  --text-secondary-dark: #a0a0a0;
+  --card-dark: #252525;
+
+  .fondo-claro {
+    --background: var(--background-dark);
+  }
+
+  .encabezado-curvo {
+    background-color: #0d47a1;
+  }
+
+  .titulo {
+    color: var(--text-dark);
+  }
+
+  .subtitulo {
+    color: var(--text-secondary-dark);
+  }
+
+  .boton-volver {
+    --background: var(--primary-dark);
+    --color: #000;
+  }
+
+  .tab-bar {
+    --background: #0d47a1;
+    --color-selected: #ffffff;
+    --color: #b0b0b0;
+  }
+}

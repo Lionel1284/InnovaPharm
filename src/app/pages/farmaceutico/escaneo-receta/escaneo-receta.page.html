@@ -1,0 +1,28 @@
+
+<ion-content class="ion-padding">
+
+  <ion-item>
+    <ion-label>Seleccionar cámara</ion-label>
+    <ion-select interface="popover" (ionChange)="onDeviceChange($event.detail.value)">
+      <ion-select-option *ngFor="let device of availableDevices" [value]="device.deviceId">
+        {{ device.label || 'Cámara desconocida' }}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <div class="scanner-container">
+    <zxing-scanner
+      #scanner
+      [formats]="formatsEnabled"
+      [device]="currentDevice"
+      (scanSuccess)="onCodeResult($event)"
+      (scanError)="onScanError($event)"
+      (camerasFound)="onCamerasFound($event)">
+    </zxing-scanner>
+  </div>
+
+  <p class="ion-text-center ion-margin-top">
+    Escanea el código QR de la receta del paciente
+  </p>
+
+</ion-content>

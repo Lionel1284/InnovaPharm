@@ -1,0 +1,166 @@
+/* AJUSTES PAGE */
+.paciente-curva-header {
+  --background: #ffffff;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  .header-container {
+    background-color: #d6e4ff;
+    text-align: center;
+    padding-top: 40px;
+    transition: background-color 0.3s ease;
+
+    .titulo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #000;
+      transition: color 0.3s ease;
+    }
+  }
+
+  .curva-blanca {
+    background-color: #ffffff;
+    width: 100%;
+    height: 160px;
+    border-top-left-radius: 100% 80px;
+    border-top-right-radius: 100% 80px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 12px;
+    transition: background-color 0.3s ease;
+  }
+}
+
+/* TARJETA DE USUARIO */
+.tarjeta-usuario {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #e7edff;
+  margin: 0 20px 24px;
+  padding: 10px 12px;
+  border-radius: 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+
+  .datos {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+    .nombre {
+      font-weight: 600;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      transition: color 0.3s ease;
+    }
+
+    .correo {
+      font-size: 13px;
+      color: #666;
+      margin: 0;
+      transition: color 0.3s ease;
+    }
+
+    .rut-label {
+      font-size: 13px;
+      color: #444;
+      transition: color 0.3s ease;
+    }
+  }
+
+  ion-icon {
+    font-size: 40px;
+    background-color: #d6e4ff;
+    border-radius: 50%;
+    padding: 8px;
+    color: #3a3a3a;
+    transition: all 0.3s ease;
+  }
+}
+
+/* AJUSTES VISUALES DE LOS ÍTEMS */
+.opciones-ajustes {
+  padding: 0 20px;
+  transition: all 0.3s ease;
+
+  ion-item {
+    background: #eef3ff;
+    border-radius: 16px;
+    margin-bottom: 12px;
+    --background: transparent;
+    --padding-start: 12px;
+    --inner-padding-end: 12px;
+    --min-height: 56px;
+    transition: background 0.3s ease;
+  }
+
+  ion-icon {
+    font-size: 24px;
+    color: #3a3a3a;
+    transition: color 0.3s ease;
+  }
+
+  ion-label {
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+}
+
+/* MODO OSCURO */
+body.dark-mode {
+  --background-dark: #121212;
+  --surface-dark: #1e1e1e;
+  --primary-dark: #bb86fc;
+  --secondary-dark: #03dac6;
+  --text-dark: #e0e0e0;
+  --text-secondary-dark: #a0a0a0;
+  --card-dark: #252525;
+
+  .paciente-curva-header {
+    .header-container {
+      background-color: #0d47a1;
+
+      .titulo {
+        color: #fff;
+      }
+    }
+
+    .curva-blanca {
+      background-color: var(--surface-dark);
+    }
+  }
+
+  .tarjeta-usuario {
+    background: var(--card-dark);
+
+    .nombre, .correo, .rut-label {
+      color: var(--text-dark);
+    }
+
+    ion-icon {
+      background-color: rgba(187, 134, 252, 0.1);
+      color: var(--primary-dark);
+    }
+  }
+
+  .opciones-ajustes {
+    ion-item {
+      background: var(--card-dark);
+
+      ion-icon {
+        color: var(--primary-dark);
+      }
+
+      ion-label {
+        color: var(--text-dark);
+      }
+    }
+  }
+}

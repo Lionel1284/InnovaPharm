@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Registrar Farmacéutico</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form (submit)="registrar($event)">
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input [(ngModel)]="farmaceutico.nombre" name="nombre" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Apellido Paterno</ion-label>
+      <ion-input [(ngModel)]="farmaceutico.apellidoPaterno" name="apellidoPaterno" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Apellido Materno</ion-label>
+      <ion-input [(ngModel)]="farmaceutico.apellidoMaterno" name="apellidoMaterno"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Correo</ion-label>
+      <ion-input [(ngModel)]="farmaceutico.correo" type="email" name="correo" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input [(ngModel)]="farmaceutico.contrasena" type="password" name="contrasena" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">RUT</ion-label>
+      <ion-input
+        [(ngModel)]="farmaceutico.rut"
+        name="rut"
+        maxlength="12"
+        (ionInput)="validarYFormatearRut($event)"
+        required>
+      </ion-input>
+    </ion-item>
+
+    <ion-button expand="block" type="submit">Registrar Farmacéutico</ion-button>
+  </form>
+</ion-content>

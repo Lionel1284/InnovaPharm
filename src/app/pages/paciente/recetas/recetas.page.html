@@ -1,0 +1,64 @@
+<ion-content class="paciente-curva-header" fullscreen>
+
+  <div class="header-container">
+    <h1 class="titulo">InnovaPharm</h1>
+
+    <div class="curva-blanca">
+      <ion-searchbar
+        [(ngModel)]="busqueda"
+        (ionInput)="filtrarRecetas()"
+        placeholder="Buscar por descripción, medicamento o fecha"
+        class="buscador">
+      </ion-searchbar>
+    </div>
+  </div>
+
+  <div class="recetas-container">
+    <div *ngIf="!cargando && recetasFiltradas.length === 0" class="mensaje-vacio">
+      <p><strong>No se encontraron recetas que coincidan.</strong></p>
+    </div>
+
+    <ion-list *ngIf="!cargando" lines="none">
+      <ion-item *ngFor="let receta of recetasFiltradas" class="card-receta">
+        <ion-avatar slot="start" class="avatar-icono">
+          <ion-label class="letra-avatar">R</ion-label>
+        </ion-avatar>
+
+        <ion-label (click)="verReceta(receta.id!)">
+          <h2>{{ receta.medicoNombre }}</h2>
+          <p>{{ receta.descripcion.length > 30 ? (receta.descripcion | slice:0:30) + '...' : receta.descripcion }}</p>
+          <small>{{ receta.fecha | date:'dd/MM/yyyy' }}</small>
+        </ion-label>
+
+        <ion-buttons slot="end">
+          <ion-button fill="clear" (click)="verReceta(receta.id!)">
+            <ion-icon name="eye-outline"></ion-icon>
+          </ion-button>
+
+          <ion-button fill="clear" [id]="'opciones-' + receta.id">
+            <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+          </ion-button>
+
+          <ion-popover
+            [trigger]="'opciones-' + receta.id"
+            triggerAction="click"
+            [dismissOnSelect]="true">
+            <ng-template>
+              <ion-content class="popover-opciones">
+                <div class="boton-opcion" (click)="irACodigo(receta.id!)">
+                  <ion-icon name="code-outline"></ion-icon>
+                  <span>GENERAR CÓDIGO</span>
+                </div>
+                <div class="boton-opcion" (click)="irAQR(receta.id!)">
+                  <ion-icon name="qr-code-outline"></ion-icon>
+                  <span>GENERAR QR</span>
+                </div>
+              </ion-content>
+            </ng-template>
+          </ion-popover>
+
+        </ion-buttons>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

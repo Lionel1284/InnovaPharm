@@ -1,0 +1,30 @@
+.titulo {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  color: #1c1c1c;
+}
+
+.opciones {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.boton {
+  background-color: #cddcff;
+  color: #1c1c1c;
+  font-weight: 500;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 999px;
+  font-size: 16px;
+  width: 220px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #b8cfff;
+  }
+}

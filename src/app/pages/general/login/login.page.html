@@ -1,0 +1,51 @@
+<ion-content class="paciente-curva-header" fullscreen>
+  <div class="header-container">
+    <h1 class="titulo">InnovaPharm</h1>
+    <div class="curva-blanca">
+      <div class="icono-usuario">
+        <ion-icon name="person-circle-outline"></ion-icon>
+      </div>
+    </div>
+  </div>
+
+  <div class="login-container">
+    <form (submit)="login($event)" class="formulario">
+      <ion-item lines="none">
+        <ion-icon slot="start" name="person-outline"></ion-icon>
+        <ion-input
+          [(ngModel)]="rut"
+          name="rut"
+          placeholder="RUN"
+          type="text"
+          maxlength="12"
+          (ionInput)="validarYFormatearRut($event)"
+          required>
+        </ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+        <ion-input
+          [(ngModel)]="contrasena"
+          name="contrasena"
+          type="password"
+          placeholder="Contraseña"
+          required>
+        </ion-input>
+      </ion-item>
+
+      <div class="acciones-texto">
+        <p>¿Olvidaste la contraseña?</p>
+        <a routerLink="/recuperar-contrasena">Recuperar contraseña</a>
+      </div>
+
+      <button type="submit" class="boton-iniciar">Iniciar sesión</button>
+
+
+      <div class="acciones-texto">
+        <p>¿No tienes una cuenta?</p>
+        <a routerLink="/register">Regístrate</a>
+      </div>
+    </form>
+  </div>
+</ion-content>

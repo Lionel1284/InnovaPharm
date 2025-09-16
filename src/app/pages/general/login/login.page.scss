@@ -1,0 +1,73 @@
+
+.titulo {
+  font-family: 'Georgia', serif;
+  font-size: 32px;
+  font-weight: bold;
+  color: #000000;
+  z-index: 2;
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.icono-usuario ion-icon {
+  font-size: 120px;
+  color: #3a3a3a;
+}
+
+// 📄 Contenedor login
+.login-container {
+  padding: 24px 16px 60px;
+  max-width: 420px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// 🔲 Inputs estilo mockup
+ion-item {
+  margin-bottom: 16px;
+  --background: #ffffff;
+  --border-color: #ccc;
+  --border-radius: 10px;
+  --padding-start: 12px;
+  border: 1px solid #aaa;
+}
+
+// Texto de ayuda y enlaces
+.acciones-texto {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 12px;
+  color: #000;
+}
+
+.acciones-texto a {
+  color: #3b6cff;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+
+
+.boton-iniciar {
+  background-color: #4a90e2; /* Un azul más suave */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  width: 100%;
+  max-width: 280px;
+  margin: 20px auto 10px;
+  display: block;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.boton-iniciar:hover {
+  background-color: #357ABD;
+}
+

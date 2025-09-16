@@ -1,0 +1,48 @@
+<div class="farmaceutico-layout">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo"></div>
+    <nav>
+      <ul>
+        <li routerLink="/farmaceutico/home" routerLinkActive="active">
+          <ion-icon name="home-outline"></ion-icon>
+          Inicio
+        </li>
+        <li routerLink="/farmaceutico/ver-receta" routerLinkActive="active">
+          <ion-icon name="document-outline"></ion-icon>
+          Ver receta
+        </li>
+        <li routerLink="/farmaceutico/ajustes" routerLinkActive="active">
+          <ion-icon name="settings-outline"></ion-icon>
+          Ajustes
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Botón cerrar sesión -->
+    <ion-button fill="clear" class="logout-button" (click)="cerrarSesion()">
+      <ion-icon name="log-out-outline" size="small"></ion-icon>
+    </ion-button>
+  </aside>
+
+  <!-- Contenido principal -->
+  <main class="contenido">
+    <router-outlet></router-outlet>
+  </main>
+</div>
+
+<!-- Footer -->
+<footer class="footer-farmaceutico">
+  <div class="footer-left">
+    <ion-icon name="apps-outline" size="large"></ion-icon>
+  </div>
+  <div class="footer-center">
+    <strong>InnovaPharm</strong>
+    <p>Lorem impsun</p>
+  </div>
+  <div class="footer-right">
+    <strong>Contactate con nosotros</strong>
+    <p>innovapharm&#64;gmail.com</p>
+    <p>+56 9 1234 5678</p>
+  </div>
+</footer>

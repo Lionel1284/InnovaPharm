@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/admin/usuarios"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Editar Farmacéutico</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+
+    <ion-item>
+      <ion-label position="stacked">Nombre</ion-label>
+      <ion-input [(ngModel)]="farmaceutico.nombre" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Apellido Paterno</ion-label>
+      <ion-input [(ngModel)]="farmaceutico.apellidoPaterno" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Apellido Materno</ion-label>
+      <ion-input [(ngModel)]="farmaceutico.apellidoMaterno"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">RUT</ion-label>
+      <ion-input [(ngModel)]="farmaceutico.rut" disabled></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Correo</ion-label>
+      <ion-input [(ngModel)]="farmaceutico.correo" type="email" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Contraseña</ion-label>
+      <ion-input [(ngModel)]="farmaceutico.contrasena" type="password" required></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-button expand="block" color="primary" (click)="guardarCambios()">
+    Guardar Cambios
+  </ion-button>
+</ion-content>

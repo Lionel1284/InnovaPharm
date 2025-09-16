@@ -1,0 +1,40 @@
+/* TABS PAGE */
+.paciente-tab-bar {
+  --background: #d6e4ff;
+  --color: #4a4a4a;
+  --color-selected: #000;
+  --ion-color-primary: #000;
+  transition: all 0.3s ease;
+
+  ion-icon {
+    font-size: 22px;
+    transition: color 0.3s ease;
+  }
+
+  ion-label {
+    font-size: 12px;
+    transition: color 0.3s ease;
+  }
+}
+
+/* MODO OSCURO */
+body.dark-mode {
+  --background-dark: #121212;
+  --surface-dark: #1e1e1e;
+  --primary-dark: #bb86fc;
+  --secondary-dark: #03dac6;
+  --text-dark: #e0e0e0;
+  --text-secondary-dark: #a0a0a0;
+  --card-dark: #252525;
+
+  .paciente-tab-bar {
+    --background: #0d47a1;
+    --color: #b0b0b0;
+    --color-selected: #ffffff;
+    --ion-color-primary: #ffffff;
+
+    ion-icon, ion-label {
+      color: var(--text-dark);
+    }
+  }
+}

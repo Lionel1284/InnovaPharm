@@ -1,0 +1,36 @@
+<ion-content class="ion-padding">
+  <h1 class="titulo">Historial de pacientes</h1>
+
+  <div *ngIf="recetas.length === 0" class="mensaje-vacio">
+    No hay recetas registradas.
+  </div>
+
+  <div *ngFor="let receta of recetas" class="card-receta">
+    <div class="info-receta">
+      <strong>{{ receta.pacienteId }}</strong>
+      <div class="detalles">
+        Fecha atención: {{ receta.fecha }}
+      </div>
+      <div class="descripcion">
+        {{ receta.descripcion }}
+      </div>
+    </div>
+
+    <ion-button fill="clear" [id]="'menu-receta-' + receta.id">
+      <ion-icon slot="icon-only" name="ellipsis-vertical"></ion-icon>
+    </ion-button>
+
+    <ion-popover
+      [trigger]="'menu-receta-' + receta.id"
+      triggerAction="click"
+      [dismissOnSelect]="true"
+    >
+      <ng-template>
+        <ion-list>
+          <ion-item button (click)="editarReceta(receta.id!)">Editar</ion-item>
+          <ion-item button (click)="confirmarEliminar(receta.id!)">Eliminar</ion-item>
+        </ion-list>
+      </ng-template>
+    </ion-popover>
+  </div>
+</ion-content>

@@ -33,5 +33,173 @@
  */
 
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
-/* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import "@ionic/angular/css/palettes/dark.system.css";
+@import "@ionic/angular/css/palettes/dark.class.css";
+/* @import "@ionic/angular/css/palettes/dark.system.css"; */
+
+
+/* Modo oscuro */
+body.dark-mode {
+  // Colores base para modo oscuro
+  --background-dark: #121212;
+  --surface-dark: #1e1e1e;
+  --primary-dark: #bb86fc;
+  --secondary-dark: #03dac6;
+  --text-dark: #e0e0e0;
+  --text-secondary-dark: #a0a0a0;
+  --card-dark: #252525;
+
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+
+  // Aplicar a todos los componentes
+  ion-content {
+    --background: var(--background-dark);
+    --color: var(--text-dark);
+  }
+
+  // Encabezados
+  .titulo, h1, h2, h3, h4 {
+    color: var(--text-dark) !important;
+  }
+
+  // Tarjetas y contenedores
+  .tarjeta-usuario, .card-receta, ion-item, .opciones-ajustes ion-item {
+    background: var(--card-dark) !important;
+    color: var(--text-dark) !important;
+
+    ion-label, .nombre, .correo, .rut-label, p, small {
+      color: var(--text-dark) !important;
+    }
+
+    ion-icon {
+      color: var(--primary-dark) !important;
+      background-color: rgba(187, 134, 252, 0.1) !important;
+    }
+  }
+
+  // Botones
+  .boton-volver, .cerrar-sesion, .guardar-btn {
+    --background: var(--primary-dark) !important;
+    --color: #000 !important;
+    background-color: var(--primary-dark) !important;
+    color: #000 !important;
+  }
+
+  // Áreas curvas y encabezados
+  .accesibilidad-curva-header .header-container,
+  .paciente-curva-header .header-container,
+  .encabezado-curvo {
+    background-color: #0d47a1 !important;
+  }
+
+  .curva-blanca, .recetas-container, .detalles-wrapper {
+    background-color: #161515 !important;
+  }
+
+  // Buscadores
+  .buscador {
+    --background: #2d2d2d !important;
+    --color: var(--text-dark) !important;
+    --icon-color: var(--text-secondary-dark) !important;
+  }
+
+  // Popovers
+  ::ng-deep ion-popover {
+    --background: #1a237e !important;
+
+    .boton-opcion {
+      color: var(--text-dark) !important;
+
+      &:hover {
+        background: #303f9f !important;
+      }
+    }
+  }
+
+  // Tab bar
+  .paciente-tab-bar, .tab-bar {
+    --background: #0d47a1 !important;
+    --color: #b0b0b0 !important;
+    --color-selected: #ffffff !important;
+  }
+
+  // Elementos específicos
+  .digito {
+    color: var(--secondary-dark) !important;
+  }
+
+  .correo {
+    color: var(--secondary-dark) !important;
+  }
+}
+
+body.dark-mode {
+  ion-content {
+    --background: var(--background-dark) !important;
+  }
+
+  ion-item, ion-item::part(native) {
+    --background: var(--card-dark) !important;
+    background: var(--card-dark) !important;
+    color: var(--text-dark) !important;
+  }
+
+  ion-label {
+    color: var(--text-dark) !important;
+  }
+
+
+  ion-avatar {
+    --background: rgba(187, 134, 252, 0.1) !important;
+  }
+
+  ion-icon {
+    color: var(--primary-dark) !important;
+  }
+
+  ::ng-deep ion-popover {
+    --background: #1a237e !important;
+
+    .boton-opcion {
+      color: var(--text-dark);
+
+      ion-icon {
+        color: var(--primary-dark);
+      }
+
+      &:hover {
+        background: #303f9f;
+      }
+    }
+  }
+}
+
+
+body.dark-mode * {
+  background-color: transparent !important;
+  color: inherit !important;
+}
+
+body.dark-mode ion-content,
+body.dark-mode .recetas-container {
+  background-color: var(--background-dark) !important;
+  color: var(--text-dark) !important;
+}
+
+
+
+// Control de tamaño de letra
+body, ion-content, ion-label, ion-text, div, p, h1, h2, h3, h4, h5, h6 {
+  font-size: var(--accesibilidad-font-size) !important;
+}
+
+.paciente,
+.paciente ion-label,
+.paciente ion-text,
+.paciente p,
+.paciente div,
+.paciente span {
+  font-size: var(--accesibilidad-font-size) !important;
+}
+
+

@@ -1,0 +1,57 @@
+<ion-content class="receta-detalle-container" [fullscreen]="true">
+  <div #recetaView class="receta-box">
+    <!-- Encabezado -->
+    <div class="header">
+      <!-- Línea tricolor -->
+    <div class="linea-tricolor">
+      <div class="linea azul"></div>
+      <div class="linea roja"></div>
+    </div>
+
+      <h2 class="titulo-encabezado">Receta Médica Electrónica</h2>
+      <p class="fecha"><strong>Fecha emisión:</strong> {{ receta?.fecha | date:'fullDate' }}</p>
+    </div>
+
+    <!-- Información del paciente y médico -->
+    <div class="info-section">
+      <div>
+        <p><strong>Nombre Paciente:</strong> {{ receta?.pacienteId }}</p>
+        <p><strong>Dirección:</strong> Sin dirección disponible</p>
+        <p><strong>Región:</strong> Sin región disponible</p>
+      </div>
+      <div>
+        <p><strong>Médico:</strong> {{ receta?.medicoNombre }}</p>
+        <p><strong>RUT Médico:</strong> {{ receta?.medicoRut }}</p>
+      </div>
+    </div>
+
+    <!-- Prescripción -->
+    <div class="prescripcion-section">
+      <h3>Prescripción</h3>
+      <div *ngFor="let med of receta?.medicamentos" class="medicamento-item">
+        <p><strong>{{ med.nombre }}</strong></p>
+        <p>{{ med.instrucciones }}</p>
+      </div>
+    </div>
+
+
+    <!-- Firma -->
+      <div class="firma-section" *ngIf="firmaBase64">
+        <div class="linea-firma"></div>
+        <p class="firma-texto">{{ firmaBase64 }}</p>
+        <p class="nombre-medico">{{ receta?.medicoNombre }}</p>
+
+        <div class="especialidad-container" *ngIf="especialidad">
+          <ion-icon name="medkit-outline" class="icono-especialidad"></ion-icon>
+          <span class="especialidad-texto">{{ especialidad }}</span>
+        </div>
+      </div>
+
+
+    <!-- Botones -->
+    <div class="botones">
+      <ion-button expand="block" class="boton" (click)="volver()">Volver</ion-button>
+      <ion-button expand="block" class="boton" (click)="descargarPDF()">Descargar</ion-button>
+    </div>
+  </div>
+</ion-content>

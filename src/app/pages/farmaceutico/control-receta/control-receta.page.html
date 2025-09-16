@@ -1,0 +1,89 @@
+<ion-content class="ion-padding">
+  <div class="receta-container">
+    <!-- Loading state -->
+    <div *ngIf="cargando" class="loading-container">
+      <ion-spinner name="dots"></ion-spinner>
+    </div>
+
+    <!-- Receta content -->
+    <ng-container *ngIf="!cargando && receta">
+      <!-- Header de la receta -->
+      <div class="contenido-centrado">
+        <h2 class="titulo">Control de Receta</h2>
+      </div>
+
+      <!-- Card principal -->
+      <div class="form-container">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>{{ receta.descripcion }}</ion-card-title>
+            <ion-card-subtitle>
+              {{ receta.fecha | date:'mediumDate' }} - {{ receta.medicoNombre }}
+            </ion-card-subtitle>
+
+            <p *ngIf="receta.estado">
+              <strong>Estado:</strong>
+              <span [ngClass]="{
+                'ion-text-success': receta.estado === 'entregada',
+                'ion-text-danger': receta.estado === 'rechazada',
+                'ion-text-primary': receta.estado === 'pendiente'
+              }">{{ receta.estado | titlecase }}</span>
+            </p>
+          </ion-card-header>
+
+          <ion-card-content>
+            <!-- Medicamentos -->
+            <div class="medicamentos-container">
+              <div class="header-seccion">
+                <ion-icon name="medical-outline" class="icono-seccion"></ion-icon>
+                <h3>Medicamentos:</h3>
+              </div>
+
+              <div *ngFor="let med of receta.medicamentos; let i = index" class="medicamento-item">
+                <div class="medicamento-header">
+                  <span class="numero-medicamento">Medicamento {{i + 1}}</span>
+                </div>
+
+                <ion-item lines="none">
+                  <ion-icon slot="start" name="medical"></ion-icon>
+                  <ion-label>
+                    <strong>{{ med.nombre }}</strong><br />
+                    <span>{{ med.instrucciones }}</span>
+                  </ion-label>
+                </ion-item>
+              </div>
+
+              <div *ngIf="receta.medicamentos.length === 0" class="mensaje-vacio">
+                <ion-icon name="medical-outline"></ion-icon>
+                <p>No hay medicamentos en esta receta</p>
+              </div>
+            </div>
+
+            <!-- Firma como texto -->
+          <div *ngIf="firmaBase64" class="seccion-firma">
+            <div class="header-seccion">
+              <ion-icon name="create-outline" class="icono-seccion"></ion-icon>
+              <p><strong>Firma del médico:</strong></p>
+            </div>
+            <div class="linea-firma"></div>
+            <p class="firma-texto">{{ firmaBase64 }}</p>
+          </div>
+
+
+
+            <!-- Botones de acción -->
+            <div class="acciones">
+              <ion-button color="success" (click)="marcarEntregada()">Marcar como Entregada</ion-button>
+              <ion-button color="danger" (click)="rechazarReceta()">Rechazar</ion-button>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </ng-container>
+
+    <!-- Sin receta -->
+    <div *ngIf="!cargando && !receta" class="sin-receta">
+      <p><strong>No se encontró la receta.</strong></p>
+    </div>
+  </div>
+</ion-content>
