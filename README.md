@@ -1,10 +1,10 @@
-# 💊 InnovaPharm - Sistema Digital de Recetas Médicas
+# InnovaPharm - Sistema Digital de Recetas Médicas
 
 > **Aplicación web/móvil híbrida y panel administrativo para la digitalización, gestión y validación de recetas médicas en el Consultorio Raúl Brañes Farmer de San Bernardo.**
 
 ---
 
-## 📌 Tabla de Contenidos
+## Tabla de Contenidos
 - [Acerca del Proyecto](#-acerca-del-proyecto)
 - [Problemática y Solución](#-problemática-y-solución)
 - [Características Principales](#-características-principales)
@@ -16,7 +16,7 @@
 
 ---
 
-## 📖 Acerca del Proyecto
+## Acerca del Proyecto
 
 **InnovaPharm** es una solución tecnológica desarrollada con principios de Ingeniería de Software orientada a optimizar el ciclo completo de prescripción, trazabilidad y dispensación de medicamentos en el sistema de salud pública local.
 
@@ -24,7 +24,7 @@ El sistema resuelve las ineficiencias del manejo en papel mediante un ecosistema
 
 ---
 
-## ⚠️ Problemática y Solución
+## Problemática y Solución
 
 | Problemática Actual (Papel) | Solución InnovaPharm |
 | :--- | :--- |
@@ -35,33 +35,33 @@ El sistema resuelve las ineficiencias del manejo en papel mediante un ecosistema
 
 ---
 
-## ✨ Características Principales
+## Características Principales
 
 El sistema maneja un control de acceso basado en roles (**RBAC**):
 
-### 👤 Paciente
+### Paciente
 - Visualización y filtrado de recetas médicas activas e históricas.
 - Generación de código QR para validación directa en farmacia.
 - Notificaciones de vencimiento y estados.
 - Opciones de accesibilidad (modo oscuro, ajuste de tamaño de texto).
 
-### 👨‍⚕️ Médico
+### Médico
 - Emisión, firma electrónica y anulación/actualización de recetas.
 - Descarga de recetas en formato PDF.
 - Búsqueda y consulta de historial clínico de prescripciones.
 
-### 💊 Farmacéutico
+### Farmacéutico
 - Escaneo de QR o búsqueda por código único de receta.
 - Validación rápida e interfaz para marcar recetas como **Revisadas** o **Entregadas**.
 
-### ⚙️ Administrador (Django Admin)
+### Administrador (Django Admin)
 - Creación y gestión masiva de usuarios y roles.
 - Generación automática de credenciales seguras.
 - Dashboard con métricas de rendimiento y uso de la plataforma.
 
 ---
 
-## 📱 Vista Móvil (Paciente)
+## Vista Móvil (Paciente)
 
 <p align="center">
   <img src="imagenes/paciente1.png" alt="Login" width="30%">
@@ -76,7 +76,7 @@ El sistema maneja un control de acceso basado en roles (**RBAC**):
 
 ---
 
-## 💻 Vista Web (Médico)
+## Vista Web (Médico)
 
 <p align="center">
   <img src="imagenes/Medico1.png" alt="Vista Principal" width="32%">
@@ -86,7 +86,7 @@ El sistema maneja un control de acceso basado en roles (**RBAC**):
 
 ---
 
-## 💻 Vista Web o Movil (Farmacéutico)
+## Vista Web o Movil (Farmacéutico)
 
 <p align="center">
   <img src="imagenes/Farma1.png" alt="Opciones de Receta" width="24%">
@@ -97,7 +97,7 @@ El sistema maneja un control de acceso basado en roles (**RBAC**):
 
 ---
 
-## 🛠️ Arquitectura y Tecnologías
+## Arquitectura y Tecnologías
 
 ### Frontend & App Híbrida
 - **Ionic Framework + Angular:** Base de código única para Android, iOS y Web.
@@ -113,7 +113,7 @@ El sistema maneja un control de acceso basado en roles (**RBAC**):
 
 ---
 
-## 🔄 Metodología de Desarrollo
+## Metodología de Desarrollo
 
 El proyecto se desarrolló utilizando la metodología ágil **Scrum**, organizada en **5 Sprints de dos semanas**:
 
@@ -125,7 +125,7 @@ El proyecto se desarrolló utilizando la metodología ágil **Scrum**, organizad
 
 ---
 
-## 🛡️ Aseguramiento de Calidad y Normativas
+## Aseguramiento de Calidad y Normativas
 
 El desarrollo fue guiado bajo los criterios de la norma **ISO/IEC 25010**, considerando:
 
@@ -135,7 +135,7 @@ El desarrollo fue guiado bajo los criterios de la norma **ISO/IEC 25010**, consi
 
 ---
 
-## 📁 Estructura del Repositorio
+## Estructura del Repositorio
 
 ```text
 ├── innovapharm-frontend/    # Proyecto Ionic + Angular (Paciente, Médico y Farmacia)
