@@ -89,10 +89,10 @@ El sistema maneja un control de acceso basado en roles (**RBAC**):
 ## 💻 Vista Web o Movil (Farmacéutico)
 
 <p align="center">
-  <img src="imagenes/farma1.png" alt="Opciones de Receta" width="24%">
-  <img src="imagenes/farma2.png" alt="Visualización de Receta" width="24%">
-  <img src="imagenes/farma3.png" alt="Validación de Receta" width="24%">
-  <img src="imagenes/farma4.png" alt="Escáner QR" width="24%">
+  <img src="imagenes/Farma1.png" alt="Opciones de Receta" width="24%">
+  <img src="imagenes/Farma2.png" alt="Visualización de Receta" width="24%">
+  <img src="imagenes/Farma3.png" alt="Validación de Receta" width="24%">
+  <img src="imagenes/Farma4.png" alt="Escáner QR" width="24%">
 </p>
 
 ---
