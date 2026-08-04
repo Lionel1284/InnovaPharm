@@ -63,15 +63,23 @@ El sistema maneja un control de acceso basado en roles (**RBAC**):
 
 ### 📱 Vista Móvil (Paciente)
 
-![Loginl](InnovaPharm/imagenes/paciente1)
+![Loginl](imagenes/paciente1.png)
 
-![Interfaz Principal](imagenes/paciente2)
+![Interfaz Principal](imagenes/paciente2.png)
 
-![Receta Medical](imagenes/paciente3)
+![Receta Medical](imagenes/paciente3.png)
 
-![Historial de Recetas](imagenes/paciente4)
+![Historial de Recetas](imagenes/paciente4.png)
 
-![Perfil de Usuario](imagenes/paciente5)
+![Perfil de Usuario](imagenes/paciente5.png)
+
+---
+
+### 📱 Vista Web (Medico)
+
+---
+
+### 📱 Vista Web (Farmaceutico)
 
 ---
 
