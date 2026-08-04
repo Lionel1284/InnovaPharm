@@ -79,9 +79,9 @@ El sistema maneja un control de acceso basado en roles (**RBAC**):
 ## 💻 Vista Web (Médico)
 
 <p align="center">
-  <img src="imagenes/medico1.png" alt="Vista Principal" width="32%">
-  <img src="imagenes/medico2.png" alt="Historial de Pacientes" width="32%">
-  <img src="imagenes/medico3.png" alt="Creación de Receta" width="32%">
+  <img src="imagenes/Medico1.png" alt="Vista Principal" width="32%">
+  <img src="imagenes/Medico2.png" alt="Historial de Pacientes" width="32%">
+  <img src="imagenes/Medico3.png" alt="Creación de Receta" width="32%">
 </p>
 
 ---
