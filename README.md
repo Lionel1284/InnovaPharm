@@ -63,11 +63,11 @@ El sistema maneja un control de acceso basado en roles (**RBAC**):
 
 ### 📱 Vista Móvil (Paciente)
 
-![Loginl](imagenes/Paciente1)
-![Interfaz Principal](imagenes/Paciente2)
-![Receta Medical](imagenes/Paciente3)
-![Historial de Recetas](imagenes/Paciente4)
-![Perfil de Usuario](imagenes/Paciente5)
+![Loginl](imagenes/paciente1)
+![Interfaz Principal](imagenes/paciente2)
+![Receta Medical](imagenes/paciente3)
+![Historial de Recetas](imagenes/paciente4)
+![Perfil de Usuario](imagenes/paciente5)
 
 ---
 
